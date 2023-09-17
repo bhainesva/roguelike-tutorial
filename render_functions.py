@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Tuple
 
 import color
 
@@ -46,3 +46,10 @@ def render_names_at_mouse_location(
     )
 
     console.print(x=y, y=y, string=names_at_mouse_location)
+
+def render_dungeon_level(
+        console: Console, dungeon_level: int, location: Tuple[int, int]
+) -> None:
+    x, y = location
+
+    console.print(x=x, y=y, string=f"Dungeon level: {dungeon_level}")

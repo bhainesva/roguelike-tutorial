@@ -45,7 +45,7 @@ def main():
 				except Exception:
 					traceback.print_exc()
 					if isinstance(handler, input_handlers.EventHandler):
-						engine.message_log.add_message(traceback.format_exc(), color.error)
+						handler.engine.message_log.add_message(traceback.format_exc(), color.error)
 		except exceptions.QuitWithoutSaving:
 			raise
 		except SystemExit:
