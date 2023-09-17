@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from tcod.context import Context
 from tcod.console import Console
 from tcod.map import compute_fov
+import exceptions
 
 from input_handlers import MainGameEventHandler
 from message_log import MessageLog

@@ -54,7 +54,7 @@ class ActionWithDirection(Action):
 
   @property
   def target_actor(self) -> Optional[Entity]:
-    """Return the actor at this actions destination"""
+    """Return the actor at this action's destination"""
     return self.engine.game_map.get_actor_at_location(*self.dest_xy)
 
   def perform(self) -> None:
@@ -115,10 +115,10 @@ class ItemAction(Action):
       target_xy = entity.x, entity.y
     self.target_xy = target_xy
 
-    @property
-    def target_actor(self) -> Optional[Actor]:
-      """Return the actor at this actions destination."""
-      return self.engine.game_map.get_actor_at_location(*self.target_xy)
+  @property
+  def target_actor(self) -> Optional[Actor]:
+    """Return the actor at this actions destination."""
+    return self.engine.game_map.get_actor_at_location(*self.target_xy)
 
   def perform(self) -> None:
     """Invoke the item's ability, this action will be given to provide context."""
